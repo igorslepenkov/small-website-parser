@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./src/app.ts",
-    "build": "tsc && cp -r ./src/views/ ./dist/views",
+    "build": "tsc && cp -r ./src/views/ ./dist/views && cp ./puppeteer.config.cjs ./dist",
     "start:prod": "node ./dist/app.js"
   },
   "keywords": [],
