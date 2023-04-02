@@ -28,7 +28,7 @@ app.post("/parse", async (req, res) => {
     await page.goto(url, { timeout: 0 });
     console.log("Navigated to url");
 
-    await page.waitForSelector(".palette-product-card");
+    await page.waitForSelector(".palette-product-card", { timeout: 0 });
     console.log("Find selectors");
 
     const pageTitle = await page.$eval(
