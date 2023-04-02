@@ -22,6 +22,7 @@ app.post("/parse", async (req, res) => {
     console.log("Started");
     const browser = await puppeteer.launch({
       headless: true,
+      args: ["--proxy-server='direct://'", "--proxy-bypass-list=*"],
     });
     console.log("Browser launched");
     const page = await browser.newPage();
