@@ -74,6 +74,8 @@ app.post("/parse", async (req, res) => {
       })
     );
 
+    await browser.close();
+
     res
       .status(200)
       .render("products", { title: pageTitle, products: productsObjects });
