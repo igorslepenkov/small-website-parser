@@ -19,12 +19,17 @@ app.get("/", (req, res) => {
 app.post("/parse", async (req, res) => {
   const { url } = req.body;
   if (url) {
+    console.log("Started");
     const browser = await puppeteer.launch();
+    console.log("Browser launched");
     const page = await browser.newPage();
+    console.log("Page Created");
 
-    await page.goto(url);
+    await page.goto(url, { timeout: 0 });
+    console.log("Navigated to url");
 
     await page.waitForSelector(".palette-product-card");
+    console.log("Find selectors");
 
     const pageTitle = await page.$eval(
       "h1.listing-top-head__text",
