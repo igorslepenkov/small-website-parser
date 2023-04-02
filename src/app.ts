@@ -21,7 +21,7 @@ app.post("/parse", async (req, res) => {
   if (url) {
     console.log("Started");
     const browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
     });
     console.log("Browser launched");
     const page = await browser.newPage();
